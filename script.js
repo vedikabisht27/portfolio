@@ -16,5 +16,32 @@ backToTop.addEventListener("click", (e) => {
     });
 });
 
+(function() {
+    emailjs.init("trK7wAOkDLGSR88Hc"); // from your EmailJS dashboard
+  })();
+
+  const form = document.getElementById("contact-info");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_httzl8e", "template_ljz1ty2", this)
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      }, (error) => {
+        alert("❌ Failed to send message. Please try again.");
+        console.error(error);
+      });
+  });
+
+  const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+
 
 
