@@ -25,7 +25,7 @@ backToTop.addEventListener("click", (e) => {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_httzl8e", "template_ljz1ty2", this)
+    emailjs.sendForm("service_httzl8e", "template_8dcqn8q", this)
       .then(() => {
         alert("✅ Message sent successfully!");
         form.reset();
