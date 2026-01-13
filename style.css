@@ -78,26 +78,6 @@ span {
   box-shadow: 0 0 10px rgb(21, 205, 134);
   color: white;
 }
-/* Laptops & big tablets
-@media (max-width: 1200px) {
-  .logo {
-    font-size: 48px;
-  }
-
-  .navbar a {
-    font-size: 26px;
-    margin: 0 12px;
-  }
-
-  .contact {
-    font-size: 26px;
-    padding: 8px 24px;
-  }
-
-  .header {
-    padding: 25px 10%;
-  }
-} */
 
 
 section {
@@ -311,7 +291,7 @@ hr {
 }
 
 .skill-card {
-  background: rgb(81, 161, 132);
+  background: rgb(97, 180, 150);
   padding: 50px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(8, 7, 7, 0.897);
@@ -328,6 +308,12 @@ hr {
 .skill-card img {
   font-size: 2rem;
 }
+.c-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
 
 .skill-card:hover {
   transform: scale(1.05);
