@@ -55,6 +55,9 @@ backToTop.addEventListener("click", e => {
 const menuIcon = document.getElementById("menu-icon");
 const navbar = document.querySelector(".navbar");
 menuIcon.addEventListener("click", () => navbar.classList.toggle("active"));
+document.querySelectorAll(".navbar a").forEach(a => {
+  a.addEventListener("click", () => navbar.classList.remove("active"));
+});
 
 // Contact form submit
 document.getElementById("contact-info").addEventListener("submit", function (e) {

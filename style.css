@@ -20,13 +20,14 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 8%;
+  padding: 12px 8%;
   background: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 150px;
   z-index:1000;
+  gap: 18px;
 }
 section {
     padding: 80px 8%;
@@ -63,6 +64,7 @@ span {
 
 }
 
+
 .navbar a {
   font-size: 30px;
   color: white;
@@ -70,6 +72,7 @@ span {
   margin: 0 15px;
   border-bottom: 3px solid transparent;
   transition: 0.3s ease;
+   white-space: nowrap; 
 }
 
 .navbar a:hover,
@@ -153,9 +156,9 @@ section {
 }
 
 .btn-1:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
+  background-color:rgb(21, 205, 134);
+  color:white;
+
 }
 
 .img-box img {
@@ -166,6 +169,7 @@ section {
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -174,7 +178,7 @@ section {
 
 ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.6);
-  width: 10px;
+  width: 20px;
 }
 
 
@@ -227,56 +231,6 @@ h3 span {
   border: 2px solid black;
 }
 
-/* .education {
-  padding: 60px 12%;
-  background-color: white;
-  min-height: 100vh;
-}
-
-.education .heading {
-  text-align: center;
-  font-size: 60px;
-  margin-bottom: 40px;
-}
-
-.education-box {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-}
-
-.edu-item {
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 7px;
-  border-left: 5px solid rgb(21, 205, 134);
-  border-right: 5px solid rgb(21, 205, 134);
-  border-radius: 10px;
-  transition: 0.3s ease;
-  text-align: center;
-  justify-content: center;
-  height: 200px;
-  
-  
-}
-
-.edu-item:hover {
-  transform: translateX(10px);
-  background-color: rgba(0, 0, 0, 0.08);
-}
-
-.edu-item h3 {
-  font-size: 30px;
-  color: black;
-  margin: 0.3px;
-}
-
-.edu-item p a {
-  font-size: 25px;
-  color: #333;
-
-
-} */
  .education-box {
     position: relative;
     margin: 60px auto;
@@ -621,8 +575,13 @@ h3 span {
   position: relative;
   bottom: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
   background-color: black;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 
 }
 
@@ -664,14 +623,24 @@ h3 span {
 }
 
 .footer ul li a {
+  position: relative;
   color: white;
-  border-bottom: 1px solid rgb(21, 205, 134);
-  transition: 0.3s ease;
+  text-decoration: none;
 }
 
-.footer ul li a:hover {
-  border-bottom: 1px solid rgb(21, 205, 134);
+.footer ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgb(21, 205, 134);
+  transition: width 0.3s ease;
+}
 
+.footer ul li a:hover::after {
+  width: 100%;
 }
 
 .footer ul li {
@@ -717,15 +686,15 @@ h3 span {
 
 
 /* HAMBURGER ICON */
-.menu-icon {
+#menu-icon {
   display: none;
-  font-size: 45px;
+  font-size: 30px;
   color: white;
   cursor: pointer;
 }
 
 /* MOBILE NAVIGATION FIX */
-@media(max-width: 900px) {
+@media(max-width: 992px) {
 
   /* header shrinks */
   .header {
@@ -742,7 +711,7 @@ h3 span {
   }
 
   /* show hamburger */
-  .menu-icon {
+  #menu-icon {
     display: block;
   }
 
@@ -750,14 +719,16 @@ h3 span {
   .navbar {
     position: absolute;
     top: 100px;
-    right: 0;
-    width: 100%;
+    right: 8%;
+    width: 220px;
     background: black;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 12px;
     display: none;
     text-align: center;
-    row-gap: 15px;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
   }
 
   /* when active */
@@ -768,6 +739,9 @@ h3 span {
   .navbar a {
     font-size: 25px;
     margin: 10px 0;
+      padding: 10px 12px;
+    width: 100%;
+    text-align: left;
   }
 
   /* home section stacking */
@@ -870,4 +844,34 @@ h3 span {
 @keyframes scaleUp {
   from { transform: scale(0.8); }
   to { transform: scale(1); }
+}
+
+.footer-contact {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: white;   /* change if your footer is light */
+    transition: 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #22c55e;
+}
+
+.footer-contact i {
+    margin-right: 5px;
+}
+.footer .list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
