@@ -60,22 +60,50 @@ menuIcon.addEventListener("click", () => navbar.classList.toggle("active"));
 document.getElementById("contact-info").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
+  const form = this;
+  const button = document.getElementById("sendBtn");
 
-  fetch("https://script.google.com/macros/s/AKfycbzq94xWN80CDQzKz2yPMua4JmgaHMC-nSNcxQqducnPUhbUCVO4S-l17ghZW3dlalSrVQ/exec", {
+  // Disable button + change text
+  button.value = "Wait...";
+  button.disabled = true;
+  button.style.opacity = "0.7";
+  button.style.cursor = "not-allowed";
+
+  const formData = new FormData(form);
+
+  fetch("YOUR_SCRIPT_URL_HERE", {
     method: "POST",
     body: formData
   })
   .then(res => res.text())
   .then(() => {
-    alert("Message sent successfully 🚀");
-    this.reset();
+    showPopup("Message sent successfully 🚀");
+    form.reset();
   })
   .catch(err => {
     console.error(err);
-    alert("Something went wrong 😬");
+    showPopup("Something went wrong 😬");
   });
 });
+
+// popup 
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  const msg = document.getElementById("popup-message");
+
+  msg.textContent = message;
+  popup.classList.add("show");
+}
+
+function closePopup() {
+  document.getElementById("popup").classList.remove("show");
+
+  const button = document.getElementById("sendBtn");
+  button.value = "Send";
+  button.disabled = false;
+  button.style.opacity = "1";
+  button.style.cursor = "pointer";
+}
 
 //https://script.google.com/macros/s/AKfycbyayRzxPKJ8E5cErzHreJYaliRtYUTubKpfoMseQfoacygKdSekmjW5H0QEAy_k4HkuAA/exec
 

@@ -225,7 +225,7 @@
       </div>
     </div>
 
-    <!-- Repeat same structure for other projects -->
+
 
   </div>
 </section>
@@ -242,8 +242,14 @@
 
 
             <textarea name="message" id="" cols="30" rows="10" placeholder="Your message" required></textarea>
-            <input type="submit" value="Send" class="btn-1">
+            <input type="submit" value="Send" class="btn-1" id="sendBtn">
         </form>
+        <div id="popup" class="popup">
+  <div class="popup-content">
+    <p id="popup-message"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
 
 
 
