@@ -46,7 +46,7 @@ section {
   text-shadow: 0 0 10px rgb(21, 205, 134);
   transform: scale(1.5);
 }
-.::after {
+.typing::after {
     content: "|";
     margin-left: 5px;
     animation: blink 0.8s infinite;
@@ -573,7 +573,7 @@ h3 span {
 
 .footer {
   position: relative;
-  bottom: 0;
+  bottom: 0;typing
   width: 100%;
   padding: 20px 0;
   background-color: black;
