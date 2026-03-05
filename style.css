@@ -46,7 +46,7 @@ section {
   text-shadow: 0 0 10px rgb(21, 205, 134);
   transform: scale(1.5);
 }
-.typing::after {
+.::after {
     content: "|";
     margin-left: 5px;
     animation: blink 0.8s infinite;
